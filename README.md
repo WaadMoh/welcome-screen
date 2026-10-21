@@ -1,22 +1,45 @@
-# ECAE Welcome Experience
+# ECAE Portable Welcome Experience
 
-Testing Version
+Browser-based prototype for the ECAE Android portable screens.
 
-Current Features
+## Current behavior
 
-- Camera Preview
-- Welcome Overlay
-- GitHub Pages Compatible
+1. The normal ECAE content rotates continuously.
+2. The front camera runs without showing a camera preview.
+3. MediaPipe checks whether a visible face is present.
+4. After a person is detected, the ECAE welcome message appears.
+5. After the person leaves, the system waits three seconds.
+6. The welcome message disappears.
+7. The normal rotating content remains available.
 
-Controls
+## Privacy
 
-P = Person Detected
+The prototype performs face-presence detection only.
 
-O = Person Left
+It does not:
 
-Next Version
+- Identify the person
+- Recognize identities
+- Analyze facial expressions
+- Save camera images
+- Upload photographs
+- Record video
 
-- Real Face Detection
-- Automatic Person Detection
-- Welcome Messages
-- Android Kiosk Integration
+## Browser requirements
+
+Use the GitHub Pages HTTPS address.
+
+Allow camera access when requested.
+
+Chrome or Microsoft Edge is recommended for testing.
+
+## Repository files
+
+- index.html
+- style.css
+- script.js
+- README.md
+
+## Future APK work
+
+The browser version can later be wrapped in an Android WebView application and configured for startup and kiosk mode.

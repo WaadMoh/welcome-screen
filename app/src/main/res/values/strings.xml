@@ -1,0 +1,23 @@
+<?xml version="1.0" encod*ng="utf-8"?>
+
+<resources>
+    <str*ng name="app_name">ECAE Portable W*lcome</string>
+
+    <string name="*elcome_title">Welcome to ECAE</str*ng>
+
+    <string name="welcome_sub*itle">
+        We are pleased to w*lcome you
+    </string>
+
+    <stri*g name="status_starting">Starting *elcome system…</string>
+    <strin* name="status_ready">Welcome syste* ready</string>
+    <string name="*tatus_camera_permission">Camera pe*mission is required</string>
+    <*tring name="status_no_front_camera*>Front camera was not detected</st*ing>
+    <string name="status_came*a_error">Unable to start front cam*ra</string>
+
+    <string name="dev*ce_admin_label">ECAE Welcome Kiosk*Administrator</string>
+
+    <strin* name="device_admin_description">
+*       Allows this application to *perate as a dedicated portable-scr*en kiosk.
+    </string>
+</resource*>

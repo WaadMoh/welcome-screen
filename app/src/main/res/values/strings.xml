@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">ECAE Portable Welcome</string>
+
+    <string name="welcome_title">Welcome to ECAE</string>
+
+    <string name="welcome_subtitle">
+        How can we support you today?
+    </string>
+
+    <string name="status_starting">
+        Starting welcome system
+    </string>
+
+    <string name="status_ready">
+        Welcome system ready
+    </string>
+
+    <string name="status_camera_permission">
+        Camera permission is required for person detection
+    </string>
+
+    <string name="status_no_camera">
+        No front camera was detected
+    </string>
+
+    <string name="status_camera_error">
+        The front camera could not be started
+    </string>
+
+    <string name="status_offline">
+        Internet connection unavailable
+    </string>
+
+    <string name="device_admin_label">
+        ECAE Welcome Kiosk Administrator
+    </string>
+
+    <string name="device_admin_description">
+        Allows this application to operate as a dedicated-screen kiosk.
+    </string>
+
+</resources>

@@ -1,74 +1,61 @@
 const camera = document.getElementById("camera");
+const statusText = document.getElementById("status");
 const welcomeOverlay = document.getElementById("welcomeOverlay");
-const statusBox = document.getElementById("status");
-
-let personPresent = false;
-let faceTimer;
 
 async function startCamera() {
 
     try {
 
-        const stream = await navigator.mediaDevices.getUserMedia({
-            video: true,
-            audio: false
-        });
+        const stream =
+            await navigator.mediaDevices.getUserMedia({
+                video: true,
+                audio: false
+            });
 
         camera.srcObject = stream;
 
-    } catch (error) {
+        camera.onloadedmetadata = () => {
+            camera.play();
+        };
 
-        console.error("Camera access denied", error);
+        statusText.innerText =
+            "Camera Started Successfully";
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        statusText.innerText =
+            "Camera Permission Denied";
 
     }
 }
 
 function showWelcome() {
 
-    if (personPresent) return;
-
-    personPresent = true;
-
-    statusBox.innerText = "Person detected";
+    statusText.innerText =
+        "Person Detected";
 
     welcomeOverlay.classList.add("show");
 }
 
 function hideWelcome() {
 
-    personPresent = false;
-
-    statusBox.innerText = "Waiting for visitor...";
+    statusText.innerText =
+        "Waiting For Visitor...";
 
     welcomeOverlay.classList.remove("show");
 }
-/*
-Temporary demo detection
-
-Press P = Person detected
-Press O = Person left
-
-Later we will replace this with real face detection.
-*/
 
 document.addEventListener("keydown", (event) => {
 
-    if (event.key.toLowerCase() === "p") {
-
+    if(event.key.toLowerCase() === "p") {
         showWelcome();
-
     }
 
-    if (event.key.toLowerCase() === "o") {
-
-        clearTimeout(faceTimer);
-
-        faceTimer = setTimeout(() => {
-
-            hideWelcome();
-
-        }, 3000);
-
+    if(event.key.toLowerCase() === "o") {
+        hideWelcome();
     }
 
 });

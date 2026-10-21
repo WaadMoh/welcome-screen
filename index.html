@@ -2,43 +2,158 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>ECAE Welcome Experience</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <video id="camera" autoplay playsinline muted></video>
+    <!--
+        The camera remains active but invisible.
+        Do not change this video ID.
+    -->
+    <video
+        id="camera"
+        autoplay
+        muted
+        playsinline
+    ></video>
 
-    <div id="idleScreen">
+    <!-- Normal continuously changing content -->
+    <main id="contentScreen">
 
-        <div class="content">
+        <header class="topBar">
 
-            <h1>ECAE Welcome Experience</h1>
+            <div class="brand">
+                <div class="brandMark">ECAE</div>
 
-            <p id="status">
-                Starting camera...
-            </p>
-
-            <div class="instructions">
-                Press P = Person Detected<br>
-                Press O = Person Left
+                <div>
+                    <h1>Emirates College for Advanced Education</h1>
+                    <p>Student Support Experience</p>
+                </div>
             </div>
 
-        </div>
+            <div id="clock" class="clock"></div>
 
-    </div>
+        </header>
 
-    <div id="welcomeOverlay">
+        <section class="contentArea">
+
+            <div id="slide1" class="slide active">
+
+                <p class="eyebrow">WELCOME TO ECAE</p>
+
+                <h2>Supporting your learning journey</h2>
+
+                <p class="description">
+                    Access student services, technical guides,
+                    and important college information.
+                </p>
+
+            </div>
+
+            <div id="slide2" class="slide">
+
+                <p class="eyebrow">STUDENT SUPPORT</p>
+
+                <h2>Need help with an ECAE service?</h2>
+
+                <p class="description">
+                    Visit the Student Support Portal for
+                    interactive step-by-step guidance.
+                </p>
+
+            </div>
+
+            <div id="slide3" class="slide">
+
+                <p class="eyebrow">DIGITAL SERVICES</p>
+
+                <h2>Simple guidance when you need it</h2>
+
+                <p class="description">
+                    Find support for Microsoft 365, Wi-Fi,
+                    student systems, and other digital services.
+                </p>
+
+            </div>
+
+        </section>
+
+        <footer class="bottomBar">
+
+            <span id="systemStatus">
+                Starting camera and detection...
+            </span>
+
+            <div class="slideDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+        </footer>
+
+    </main>
+
+    <!-- Welcome screen shown after detecting a person -->
+    <section
+        id="welcomeOverlay"
+        aria-hidden="true"
+    >
+
+        <div class="welcomeGlow"></div>
 
         <div class="welcomeCard">
-            <h1>Welcome to ECAE</h1>
-            <p>How can we support you today?</p>
+
+            <div class="welcomeIcon">ECAE</div>
+
+            <p class="welcomeLabel">
+                EMIRATES COLLEGE FOR ADVANCED EDUCATION
+            </p>
+
+            <h2>Welcome to ECAE</h2>
+
+            <div class="welcomeLine"></div>
+
+            <p class="welcomeText">
+                How can we support you today?
+            </p>
+
         </div>
 
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Only appears if automatic startup is blocked -->
+    <section id="permissionScreen">
+
+        <div class="permissionCard">
+
+            <h2>Start Welcome Experience</h2>
+
+            <p>
+                Camera access is required only to detect
+                whether a visitor is present.
+            </p>
+
+            <button id="startButton" type="button">
+                Start Experience
+            </button>
+
+            <p id="permissionMessage" class="permissionMessage"></p>
+
+        </div>
+
+    </section>
+
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>

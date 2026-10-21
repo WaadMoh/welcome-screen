@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
          of the page that displays your changing content.
         */
         private const val CONTENT_URL =
-            "https://YOUR-GITHUB-NAME.github.io/YOUR-REPOSITORY/"
+            "https://waadmoh.github.io/welcome-screen/"
 
         /*
          A face must be detected this many consecutive times

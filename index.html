@@ -10,8 +10,21 @@
 <body>
 
     <!-- Hidden camera -->
-    <video id="camera" autoplay playsinline muted></video>
-
+    <video
+        id="camera"
+        autoplay
+        playsinline
+        muted
+        width="300"
+        style="
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            border:3px solid white;
+            border-radius:12px;
+            z-index:9999;
+        ">
+    </video>
     <!-- Normal screen -->
     <div id="idleScreen">
 

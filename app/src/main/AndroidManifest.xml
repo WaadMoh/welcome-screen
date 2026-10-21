@@ -1,0 +1,82 @@
+<?xm* version="1.0" encoding="utf-8"?>
+*<manifest xmlns:android="http://sc*emas.android.com/apk/res/android">*
+    <!-- Camera permission -->
+  * <uses-permission android:name="an*roid.permission.CAMERA" />
+
+    <!*- Needed for launch after startup *->
+    <uses-permission android:na*e="android.permission.RECEIVE_BOOT*COMPLETED" />
+
+    <!-- Keep scree* awake -->
+    <uses-permission an*roid:name="android.permission.WAKE*LOCK" />
+
+    <!-- Front camera is*preferred, but the APK can still i*stall without one -->
+    <uses-fe*ture
+        android:name="android*hardware.camera.front"
+        and*oid:required="false" />
+
+    <appl*cation
+        android:allowBackup*"false"
+        android:fullBackup*ontent="false"
+        android:har*wareAccelerated="true"
+        and*oid:label="@string/app_name"
+     *  android:supportsRtl="true"
+     *  android:theme="@style/Theme.ECAE*ortableWelcome">
+
+        <activit*
+            android:name=".MainAc*ivity"
+            android:configC*anges="keyboardHidden|orientation|*creenSize"
+            android:exc*udeFromRecents="true"
+            *ndroid:exported="true"
+           *android:launchMode="singleTask"
+  *         android:screenOrientation*"sensorPortrait"
+            andro*d:showWhenLocked="true"
+          * android:turnScreenOn="true">
+
+   *        <!-- Normal app launcher -*>
+            <intent-filter>
+    *           <action android:name="a*droid.intent.action.MAIN" />
+
+    *           <category android:name=*android.intent.category.LAUNCHER" *>
+            </intent-filter>
+
+  *         <!-- Allow the applicatio* to become the screen's Home launc*er -->
+            <intent-filter>*                <action android:na*e="android.intent.action.MAIN" />
+*                <category android:*ame="android.intent.category.HOME"*/>
+                <category andro*d:name="android.intent.category.DE*AULT" />
+            </intent-filt*r>
+
+        </activity>
+
+        <*eceiver
+            android:name="*BootReceiver"
+            android:*irectBootAware="true"
+            *ndroid:enabled="true"
+            *ndroid:exported="true">
+
+         *  <intent-filter>
+                *action android:name="android.inten*.action.BOOT_COMPLETED" />
+       *        <action android:name="andr*id.intent.action.LOCKED_BOOT_COMPL*TED" />
+                <action an*roid:name="android.intent.action.M*_PACKAGE_REPLACED" />
+            */intent-filter>
+
+        </receive*>
+
+        <receiver
+            a*droid:name=".WelcomeDeviceAdminRec*iver"
+            android:descript*on="@string/device_admin_descripti*n"
+            android:exported="t*ue"
+            android:label="@st*ing/device_admin_label"
+          * android:permission="android.permi*sion.BIND_DEVICE_ADMIN">
+
+        *   <meta-data
+                andr*id:name="android.app.device_admin"*                android:resource="*xml/device_admin_receiver" />
+
+   *        <intent-filter>
+          *     <action android:name="android*app.action.DEVICE_ADMIN_ENABLED" /*
+            </intent-filter>
+
+   *    </receiver>
+
+    </application*
+
+</manifest>

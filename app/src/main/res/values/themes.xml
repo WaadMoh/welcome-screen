@@ -1,0 +1,26 @@
+<?*ml version="1.0" encoding="utf-8"?*
+
+<resources>
+
+    <style name="Th*me.ECAEPortableWelcome"
+        pa*ent="Theme.AppCompat.Light.NoActio*Bar">
+
+        <item name="android*fontFamily">sans</item>
+
+        <*tem name="android:windowActionMode*verlay">true</item>
+
+        <item*name="android:windowFullscreen">tr*e</item>
+
+        <item name="andr*id:navigationBarColor">#000000</it*m>
+
+        <item name="android:st*tusBarColor">#000000</item>
+
+     *  <item name="android:windowLightS*atusBar">false</item>
+
+        <it*m name="android:colorAccent">#1A73*8</item>
+
+        <item name="andr*id:windowNoTitle">true</item>
+
+   *</style>
+
+</resources>

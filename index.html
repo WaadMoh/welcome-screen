@@ -1,90 +1,44 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECAE Welcome Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    font-family: Segoe UI, sans-serif;
-    overflow: hidden;
-    background: #0b2d4d;
-    color: white;
-    height: 100vh;
-}
+    <video id="camera" autoplay playsinline muted></video>
 
-#camera {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    <div id="idleScreen">
 
-    width: 320px;
-    height: 240px;
+        <div class="content">
 
-    border: 3px solid white;
-    border-radius: 12px;
+            <h1>ECAE Welcome Experience</h1>
 
-    z-index: 9999;
+            <p id="status">
+                Starting camera...
+            </p>
 
-    opacity: 1;
-    background: black;
-}
+            <div class="instructions">
+                Press P = Person Detected<br>
+                Press O = Person Left
+            </div>
 
-#idleScreen {
-    width: 100%;
-    height: 100vh;
+        </div>
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+    </div>
 
-.content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
+    <div id="welcomeOverlay">
 
-.content p {
-    font-size: 1.5rem;
-}
+        <div class="welcomeCard">
+            <h1>Welcome to ECAE</h1>
+            <p>How can we support you today?</p>
+        </div>
 
-.info-box {
-    margin-top: 30px;
-    padding: 20px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 16px;
-}
+    </div>
 
-#welcomeOverlay {
-    position: fixed;
-    inset: 0;
+    <script src="script.js"></script>
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: rgba(0,0,0,0.85);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: 0.5s;
-}
-
-#welcomeOverlay.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.welcome-card {
-    text-align: center;
-}
-
-.welcome-card h1 {
-    font-size: 5rem;
-    margin-bottom: 20px;
-}
-
-.welcome-card p {
-    font-size: 2rem;
-}
+</body>
+</html>

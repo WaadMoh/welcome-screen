@@ -1,45 +1,42 @@
-# ECAE Portable Welcome Experience
+# ECAE Automatic Welcome Detection
 
-Browser-based prototype for the ECAE Android portable screens.
+This is a browser-based automatic visitor detection prototype.
 
-## Current behavior
+## Behavior
 
-1. The normal ECAE content rotates continuously.
-2. The front camera runs without showing a camera preview.
-3. MediaPipe checks whether a visible face is present.
-4. After a person is detected, the ECAE welcome message appears.
-5. After the person leaves, the system waits three seconds.
-6. The welcome message disappears.
-7. The normal rotating content remains available.
+- No person detected: Waiting for someone...
+- Visible face detected: Hello
+- Face gone for three seconds: Waiting for someone...
 
-## Privacy
+## Important
 
-The prototype performs face-presence detection only.
+The camera is hidden, but it remains active for detection.
 
-It does not:
+The system does not:
 
-- Identify the person
+- Identify people
 - Recognize identities
-- Analyze facial expressions
-- Save camera images
-- Upload photographs
+- Analyze expressions
 - Record video
+- Save photographs
 
-## Browser requirements
-
-Use the GitHub Pages HTTPS address.
-
-Allow camera access when requested.
-
-Chrome or Microsoft Edge is recommended for testing.
-
-## Repository files
+## Files
 
 - index.html
 - style.css
 - script.js
 - README.md
 
-## Future APK work
+## Testing
 
-The browser version can later be wrapped in an Android WebView application and configured for startup and kiosk mode.
+Open the GitHub Pages HTTPS website.
+
+Allow camera access when requested.
+
+Stand in front of the camera.
+
+The message should automatically change to Hello.
+
+Move away from the camera.
+
+After three seconds, it should automatically return to Waiting for someone...

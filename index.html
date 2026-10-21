@@ -1,20 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Test</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ECAE Welcome Detection</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <video id="camera" autoplay muted playsinline></video>
+    <video
+        id="camera"
+        autoplay
+        muted
+        playsinline
+    ></video>
 
-    <div id="screen">
-        Waiting for someone...
-    </div>
+    <main id="screen">
 
-    <script src="script.js"></script>
+        <div class="card">
+
+            <div class="logo">ECAE</div>
+
+            <h1 id="mainMessage">
+                Waiting for someone...
+            </h1>
+
+            <p id="statusMessage">
+                Starting camera and detection...
+            </p>
+
+        </div>
+
+    </main>
+
+    <section id="permissionScreen">
+
+        <div class="permissionCard">
+
+            <h2>Start Welcome Experience</h2>
+
+            <p>
+                Allow camera access so the system can detect
+                when someone is present.
+            </p>
+
+            <button id="startButton" type="button">
+                Start Experience
+            </button>
+
+            <p id="errorMessage"></p>
+
+        </div>
+
+    </section>
+
+    <script type="module" src="script.js"></script>
 
 </body>
 </html>

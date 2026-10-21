@@ -1,5 +1,6 @@
 const camera = document.getElementById("camera");
 const welcomeOverlay = document.getElementById("welcomeOverlay");
+const statusBox = document.getElementById("status");
 
 let personPresent = false;
 let faceTimer;
@@ -28,6 +29,8 @@ function showWelcome() {
 
     personPresent = true;
 
+    statusBox.innerText = "Person detected";
+
     welcomeOverlay.classList.add("show");
 }
 
@@ -35,9 +38,10 @@ function hideWelcome() {
 
     personPresent = false;
 
+    statusBox.innerText = "Waiting for visitor...";
+
     welcomeOverlay.classList.remove("show");
 }
-
 /*
 Temporary demo detection
 

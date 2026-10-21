@@ -1,18 +1,149 @@
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#0b2d4d;
-    color:white;
-    font-family:Segoe UI,sans-serif;
-    font-size:60px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#camera{
-    position:fixed;
-    left:-9999px;
-    width:640px;
-    height:480px;
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background: #082f52;
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/*
+The camera operates but remains invisible.
+
+Do not use display: none because the browser
+must continue processing its video frames.
+*/
+#camera {
+    position: fixed;
+    top: -10000px;
+    left: -10000px;
+    width: 640px;
+    height: 480px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#screen {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    background:
+        radial-gradient(
+            circle at center,
+            #0d72af 0%,
+            #082f52 65%,
+            #041b30 100%
+        );
+}
+
+.card {
+    width: min(950px, 92%);
+    padding: 70px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 36px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    transition:
+        background 500ms ease,
+        transform 500ms ease;
+}
+
+.card.detected {
+    background: rgba(255, 255, 255, 0.16);
+    transform: scale(1.03);
+}
+
+.logo {
+    display: grid;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 35px;
+    place-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 28px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+#mainMessage {
+    font-size: clamp(48px, 8vw, 110px);
+    line-height: 1.1;
+    transition: opacity 250ms ease;
+}
+
+#statusMessage {
+    margin-top: 30px;
+    color: #ccecff;
+    font-size: clamp(16px, 2vw, 23px);
+}
+
+#permissionScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    place-items: center;
+    padding: 25px;
+    background: rgba(3, 25, 44, 0.98);
+}
+
+#permissionScreen.show {
+    display: grid;
+}
+
+.permissionCard {
+    width: min(560px, 94%);
+    padding: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.09);
+    text-align: center;
+}
+
+.permissionCard h2 {
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.permissionCard p {
+    color: #d5efff;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#startButton {
+    margin-top: 28px;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 14px;
+    background: white;
+    color: #082f52;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+#startButton:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+#errorMessage {
+    min-height: 28px;
+    margin-top: 20px;
+    color: #ffcccc;
 }
